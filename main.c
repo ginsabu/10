@@ -1,13 +1,18 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
-{
-	char code1 = 'A';
-	int code2 = 65;
-	
-	printf("code1 = %c, (%d)\n", code1, code1);
-	printf("code2 = %d, (%d)\n", code2, code2);
-	return 0;
+int main(void){
+    int i = 0;
+    char str[4];
+    str[0] = 'a';
+    str[1] = 'b';
+    str[2] = 'c';
+    str[3] = '\0';
+    
+    printf("%s\n", str);  
+
+    while (str[i] != '\0') {
+        printf("%c", str[i]);
+        i++;
+    }
 }
