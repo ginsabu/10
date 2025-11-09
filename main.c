@@ -1,31 +1,16 @@
 #include <stdio.h>
 
-int main(void) {
-    char word1[50];
-    char word2[50];
-    char word3[50];
-    FILE *fp;
+void main(void){
+    FILE *fp = NULL;
+    char c;
 
-    printf("input a word: ");
-    scanf("%s", word1);
+    fp = fopen("sample.txt", "r");
+    if (fp == NULL)
+        printf("cannot open file\n");
 
-    printf("input a word: ");
-    scanf("%s", word2);
-
-    printf("input a word: ");
-    scanf("%s", word3);
-
-    fp = fopen("sample.txt", "w");
-    if (fp == NULL) {
-        printf("File open error!\n");
-        return 1;
-    }
-
-    fprintf(fp, "%s\n", word1);
-    fprintf(fp, "%s\n", word2);
-    fprintf(fp, "%s\n", word3);
+    // Read characters until EOF
+    while ((c = fgetc(fp)) != EOF)
+        putchar(c);   // print the character
 
     fclose(fp);
-
-    return 0;
 }
